@@ -1,3 +1,5 @@
+// USE THE COMMAND bin/rails cypress:open IN THE TERMINAL TO RUN THE TESTS
+
 describe("Home Page", () => {
     beforeEach(() => {
         cy.visit("/");
@@ -5,7 +7,6 @@ describe("Home Page", () => {
     });
 
     it("should verify the header text", () => {
-        // Log the full text content of the h1 element using .invoke('text')
         cy.get("h1")
             .invoke("text")
             .then(text => {
@@ -13,7 +14,6 @@ describe("Home Page", () => {
                 console.log("Full H1 Element Text using .invoke:", trimmedText);
             });
 
-        // Check for the exact text 'Welcome to Jungle' in the h1 element
         cy.get("h1")
             .should("be.visible")
             .invoke("text")
